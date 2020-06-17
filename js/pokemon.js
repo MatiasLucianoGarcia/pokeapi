@@ -20,10 +20,17 @@ fetchPokemons();
 function createPokemonCard(pokemon){
     const pokemonEl= document.createElement('div');
     pokemonEl.classList.add('pokemon');
-
-    const pokeInnerHTML = `
-        ${pokemon.id}
-    `
+    const pokeInnerHTML = `  
+        <div class="img-container">
+            <img src="https://pokeres.bastionbot.org/images/pokemon/${pokemon.id}.png">
+        </div>
+        <div class="info">
+            <span class="number">${pokemon.id}</span>
+            <h3 class="name">${pokemon.name}</h3>
+            <small class="type">Type:<span>${pokemon.type}</span></small>
+        </div>
+        
+    `;
     pokemonEl.innerHTML = pokeInnerHTML;
     poke_container.appendChild(pokemonEl);
 }
